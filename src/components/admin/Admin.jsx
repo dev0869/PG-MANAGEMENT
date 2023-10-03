@@ -2,7 +2,7 @@ import React from 'react'
 import { Stack } from '@mui/material'
 
 import { Menu } from "react-feather";
-
+import AdminContact from './components/AdminContact';
 import { Nav, Navbar, Form } from "react-bootstrap";
 import VerticalNavbar from './VerticalNavbar';
 import { useState } from 'react';
@@ -15,7 +15,7 @@ const Admin = () => {
     <>
       <Stack display={"flex"} flexDirection={"row"}>
         {show && (
-          <Stack flex={2}>
+          <Stack flex={1}>
             <VerticalNavbar />
           </Stack>
         )}
@@ -50,6 +50,7 @@ const Admin = () => {
             <Route path="/" element={<Dashboard />}></Route>
             <Route path="Dashboard" element={<Dashboard />}></Route>
             <Route path="userbooking" element={<UserBooking />}></Route>
+            <Route path="contact" element={<AdminContact />}></Route>
           </Routes>
         </Stack>
       </Stack>
