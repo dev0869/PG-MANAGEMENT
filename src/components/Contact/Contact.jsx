@@ -1,5 +1,4 @@
-import React from "react";
-import './contact.css'
+import "./contact.css";
 const ContactUs = () => {
   return (
     <div className="contact_us_6" id="contact">
@@ -69,7 +68,8 @@ const ContactUs = () => {
             </button>
           </div>
         </form>
-        <div style={{width:'50%'}}
+        <div
+          style={{ width: "50%" }}
           className="responsive-cell-block wk-desk-7 wk-ipadp-12 wk-tab-12 wk-mobile-12"
           id="i772w"
         >

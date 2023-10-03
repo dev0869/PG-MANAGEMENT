@@ -1,10 +1,13 @@
-import React from "react";
 import { Amenitiesdata } from "../../../constants/complementdata";
 import { Stack } from "@mui/material";
+
 const Amenities = () => {
   return (
-    <div className="Amenitiesmain">
-      <h2>Amenities List</h2>
+    <div
+      className="Amenitiesmain "
+      style={{ position: "relative", top: "32px" }}
+    >
+      <h2 className="text-3xl">Amenities List</h2>
       <br />
       <p style={{ width: "60%", margin: "auto" }}>
         We provide all the amenities, some amenities are surely available for
@@ -23,7 +26,7 @@ const Amenities = () => {
         {Amenitiesdata.map((e, i) => {
           return (
             <div key={i} className="amenities-box">
-              <img src={e.img} alt="" />
+              <img src={e.img} alt="icon" />
               <Stack flexDirection={"column"}>
                 <p className="mb-0">
                   {e.text} <br />

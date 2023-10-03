@@ -1,0 +1,11 @@
+.advancetext {
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #f32170, #ff6b08, #e678e6, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.bloh {
+  padding: 90px 10px;
+}
