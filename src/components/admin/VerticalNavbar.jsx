@@ -34,8 +34,8 @@ const VerticalNavbar = () => {
             </Link>
           </div>
           <hr className="text-white mb-2 mt-2" />
-          <p className=" text-xl  text-white p-2 rounded-md items-center">
-            Filter by Date
+          <p className=" text-lg  text-white p-2 rounded-md items-center">
+            Filter  by Date
           </p>
           <DateRangePicker />
           <div className="flex flex-col  mt-3 text-md text-white">

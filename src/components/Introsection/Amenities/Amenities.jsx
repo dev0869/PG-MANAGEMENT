@@ -5,7 +5,7 @@ const Amenities = () => {
   return (
     <div
       className="Amenitiesmain "
-      style={{ position: "relative", top: "32px" }}
+      style={{ position: "relative", top: "32px",zIndex:'9' }}
     >
       <h2 className="text-3xl">Amenities List</h2>
       <br />

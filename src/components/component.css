@@ -6,6 +6,11 @@
   transition: 0.5s;
   color: #ff4500;
 }
+
+.anim-center-title{
+background-color: black !important;
+}
+
 .complementarybox img {
   width: 40%;
   height: 100%;

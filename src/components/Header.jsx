@@ -340,21 +340,24 @@ function Header() {
           justifyContent={"space-between"}
           flexDirection={"row"}
         >
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "orangered",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+          <Link to={'/'}>
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "orangered",
+                textDecoration: "none",
+              }}
+            >
+              LOGO
+            </Typography>
+          </Link>
+
           <Stack display={"flex"} flexDirection={"row"} gap={2}>
             <a href={"/#home"}>
               <ListItemIcon sx={{ marginRight: "10px", cursor: "pointer" }}>
