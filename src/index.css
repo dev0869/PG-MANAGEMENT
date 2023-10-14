@@ -9,7 +9,7 @@
 @tailwind utilities;
 body{
   background-color: #f6fbff;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0 !important;
@@ -32,4 +32,12 @@ a:hover{
 
 .rs-picker-toolbar-right button{
   background: rgb(69, 38, 248) !important;
+}
+
+
+@media only screen and (max-width:900px){
+  body{
+  background-color: #f6fbff;
+  overflow-x: hidden !important;
+}
 }

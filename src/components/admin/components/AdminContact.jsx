@@ -11,7 +11,7 @@ import { DateRangePicker } from 'rsuite'
 const AdminContact = () => {
   return (
       <>
-          <DateRangePicker showWeekNumbers/>
+
       <div className="m-8">
         <Table hover className="text-nowrap">
           <thead>
