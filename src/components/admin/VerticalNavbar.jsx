@@ -2,16 +2,25 @@ import React from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import ClassIcon from "@mui/icons-material/Class";
 import { Link } from "react-router-dom";
+import { useDispatch,useSelector } from "react-redux";
 import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
 import SingleBedIcon from "@mui/icons-material/SingleBed";
 import BedIcon from "@mui/icons-material/Bed";
 import "rsuite/dist/rsuite.min.css";
+import {RoomFilter} from "../../features/filterSlice";
+
 import { DateRangePicker } from "rsuite";
 const VerticalNavbar = () => {
+
+  const dispatch = useDispatch();
+
+
+  const handleFileter = (data ) => {
+    dispatch(RoomFilter(data));
+  }
     return (
-      //   bg-[#29199b]
-      <>
-        <div className="bg-[#3020a1f5]  h-[110vh] p-4">
+      <div className="sticky top-0">
+        <div className="bg-[#3020a1f5]   h-[110vh] p-4">
           <Link to={"/"}>
             <h1 className="text-white text-2xl">Noida PG</h1>
           </Link>
@@ -35,24 +44,33 @@ const VerticalNavbar = () => {
           </div>
           <hr className="text-white mb-2 mt-2" />
           <p className=" text-lg  text-white p-2 rounded-md items-center">
-            Filter  by Date
+            Filter by Date
           </p>
           <DateRangePicker />
           <div className="flex flex-col  mt-3 text-md text-white">
-            <p className="flex bg-[#5245ad] p-2 rounded-md items-center  mb-1 gap-2">
+            <p
+              onClick={() => handleFileter("single")}
+              className=" flex  cursor-pointer   bg-[#5245ad] p-2 rounded-md items-center  mb-1 gap-2"
+            >
               <SingleBedIcon /> SINGLE OCCUPANCY
             </p>
 
-            <p className="flex  bg-[#5245ad] p-2 rounded-md items-center  mb-1 gap-2">
+            <p
+              onClick={() => handleFileter("double")}
+              className="flex  cursor-pointer  bg-[#5245ad] p-2 rounded-md items-center  mb-1 gap-2"
+            >
               <BedIcon /> DOUBLE OCCUPANCY
             </p>
 
-            <p className="flex  bg-[#5245ad] p-2 rounded-md items-center  mb-1 gap-2">
+            <p
+              onClick={() => handleFileter("triple")}
+              className="flex cursor-pointer  bg-[#5245ad] p-2 rounded-md items-center  mb-1 gap-2"
+            >
               <SingleBedIcon /> TRIPLE OCCUPANCY
             </p>
           </div>
         </div>
-      </>
+      </div>
     );
 };
 

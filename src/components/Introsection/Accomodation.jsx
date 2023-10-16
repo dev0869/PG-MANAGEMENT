@@ -1,6 +1,7 @@
 import { Accomodations } from "../../constants/complementdata";
 import { Stack } from "@mui/material";
 import "../component.css";
+import { Link } from "react-router-dom";
 
 const Accomodation = () => {
   return (
@@ -70,27 +71,29 @@ const Accomodation = () => {
             const { text, img } = e;
 
             return (
-              <Stack key={i} className="carding">
-                <img src={img} alt="harami" />
-                <Stack
-                  direction={"row"}
-                  alignItems={"center"}
-                  justifyContent={"space-between"}
-                  p={2}
-                >
-                  <h5>
-                    ₹ 25,999.00 <br />
-                    <span style={{ color: "orangered", fontSize: "16px" }}>
-                      /Per Month
-                    </span>
-                  </h5>
-                  <button className="bookcardbut">Book Now</button>
-                </Stack>
+              <Link to={'/example'} className="text-black ">
+                <Stack key={i} className="carding">
+                  <img src={img} alt="harami" />
+                  <Stack
+                    direction={"row"}
+                    alignItems={"center"}
+                    justifyContent={"space-between"}
+                    p={2}
+                  >
+                    <h5>
+                      ₹ 25,999.00 <br />
+                      <span style={{ color: "orangered", fontSize: "16px" }}>
+                        /Per Month
+                      </span>
+                    </h5>
+                    <button className="bookcardbut">Book Now</button>
+                  </Stack>
 
-                <div className="cardbanner">
-                  <h4>{text}</h4>
-                </div>
-              </Stack>
+                  <div className="cardbanner">
+                    <h4>{text}</h4>
+                  </div>
+                </Stack>
+              </Link>
             );
           })}
         </Stack>

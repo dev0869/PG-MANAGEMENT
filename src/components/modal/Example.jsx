@@ -22,34 +22,34 @@ function Example() {
       pan: "s",
       photo: "s",
       medical: "",
-      room:'',
+      room: "",
     },
     onSubmit: (values) => {
       try {
-        dispatch(postDetails(values)).then(unwrapResult).then(() => {
-            swal("Oops", "Something went wrong!", "success");
+        dispatch(postDetails(values))
+          .then(unwrapResult)
+          .then(() => {
+            swal("Success", "Booking Succesfully!", "success");
             formik.resetForm();
-        }
-        )
-  
+          });
       } catch (error) {
         swal("Oops", "Something went wrong!", "error");
       }
     },
   });
 
- const handleimgChange = async (e, field) => {
-   const file = [e.target.files[0]];
-   try {
-     const res = await uploadDoc(file);
-     formik.setFieldValue(field, res[0]);
-   } catch (error) {
-     console.log(error);
-   }
- };
+  const handleimgChange = async (e, field) => {
+    const file = [e.target.files[0]];
+    try {
+      const res = await uploadDoc(file);
+      formik.setFieldValue(field, res[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const handleroom =  (e) => {
- formik.setFieldValue("room",e.target.value)
+  const handleroom = (e) => {
+    formik.setFieldValue("room", e.target.value);
   };
 
   const handleMedicalChange = (event) => {

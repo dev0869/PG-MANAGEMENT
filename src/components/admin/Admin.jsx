@@ -1,6 +1,5 @@
 import React from 'react'
 import { Stack } from '@mui/material'
-
 import { Menu } from "react-feather";
 import AdminContact from './components/AdminContact';
 import { Nav, Navbar, Form } from "react-bootstrap";
@@ -23,7 +22,7 @@ const Admin = () => {
         <Stack flex={8}>
           <Navbar
             expanded="lg"
-            className="pl-4 shadow-md navbar-classic navbar navbar-expand-lg"
+            className="pl-4 p-3 shadow-md navbar-classic navbar navbar-expand-lg"
           >
             <div className="d-flex justify-content-between w-100">
               <div className="d-flex align-items-center">
@@ -34,9 +33,9 @@ const Admin = () => {
                 />
 
                 <div className="ms-lg-3 d-none d-md-none d-lg-block">
-                  <Form className="d-flex align-items-center">
+                  {/* <Form className="d-flex align-items-center">
                     <Form.Control type="search" placeholder="Search" />
-                  </Form>
+                  </Form> */}
                 </div>
               </div>
 

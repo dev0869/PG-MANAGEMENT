@@ -1,46 +1,73 @@
+import { useDispatch, useSelector } from "react-redux";
+import { fetchContact, delContact } from "../../../features/bookingSlice";
+import { useEffect, useState } from "react";
+import Datatable from "usereactable";
+import { unwrapResult } from "@reduxjs/toolkit";
 
-
-
-import { Col, Row, Container, Table } from "react-bootstrap";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-
-
-import { DateRangePicker } from 'rsuite'
 const AdminContact = () => {
-  return (
-      <>
+  const dispatch = useDispatch();
+  // const [deep,setDeep]=useState([])
+  const Data = useSelector((st) => st.booking.contact);
 
+  useEffect(() => {
+    dispatch(fetchContact());
+  }, [dispatch]);
+
+  const cols = [
+    {
+      headerName: "Date",
+      field: "createdAt",
+      renderCell: (ele) => {
+        return <p>{ele.createdAt.split("T")[0]}</p>;
+      },
+    },
+    {
+      headerName: "Name",
+      field: "name",
+    },
+    {
+      headerName: "Email",
+      field: "email",
+    },
+    {
+      headerName: "Number",
+      field: "number",
+    },
+    {
+      headerName: "Remark",
+      field: "message",
+    },
+  ];
+
+
+  return (
+    <>
       <div className="m-8">
-        <Table hover className="text-nowrap">
-          <thead>
-            <tr>
-              <th scope="col">Sr.No</th>
-              <th scope="col">Name</th>
-              <th scope="col">Address</th>
-              <th scope="col">City</th>
-              <th scope="col">Medical Issue</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Tony</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>false</td>
-              <td>
-                <div className="  flex gap-2 items-center ">
-                 <RemoveRedEyeIcon/>
-                <EditIcon color="primary"/>
-                <DeleteIcon color="error"/>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
+        {Data?.length > 0 && (
+          <Datatable
+            cols={cols}
+            data={[...Data]}
+            pagination
+            title={"Customer list"}
+            keysToExcludeFromView={[
+              "_id",
+              "createdAt",
+              "updatedAt",
+              "__v",
+              "id",
+            ]}
+            actionButtons={{
+              onDeleteBtnCLick: (ele) => {
+                const { _id } = ele;
+                dispatch(delContact(_id))
+                  .then(unwrapResult)
+                  .then(() => {
+                    dispatch(fetchContact());
+                  });
+              },
+            }}
+          />
+        )}
       </div>
     </>
   );

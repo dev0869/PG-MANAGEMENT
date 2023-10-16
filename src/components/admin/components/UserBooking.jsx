@@ -1,35 +1,35 @@
-import { Col, Row, Container, Table } from "react-bootstrap";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchDetails,
   delDetails,
   updateDetails,
 } from "../../../features/bookingSlice";
-import { useEffect } from "react";
-import { Datatable } from "react-ele2";
+import { useEffect, useState } from "react";
+import Datatable from "usereactable";
+import { unwrapResult } from "@reduxjs/toolkit";
 
 const UserBooking = () => {
   const dispatch = useDispatch();
+  // const [deep,setDeep]=useState([])
   const data = useSelector((st) => st.booking.user);
+  const filters = useSelector((st) => st.filter.filter);
 
-// const RoomFilter=data.filter((ele)=>ele.room==='')
+  const filteredData = filters
+    ? data.filter((ele) => ele.room === filters)
+    : data;
 
-  console.log(data);
-
+  console.log(filteredData);
   useEffect(() => {
     dispatch(fetchDetails());
-  }, []);
+  }, [dispatch]);
 
   const cols = [
     {
       headerName: "Date",
       field: "createdAt",
       renderCell: (ele) => {
-        return <p>{ele.createdAt.split('T')[0]}</p>;
-      }
+        return <p>{ele?.createdAt?.split("T")[0]}</p>;
+      },
     },
     {
       headerName: "Name",
@@ -52,22 +52,37 @@ const UserBooking = () => {
   return (
     <>
       <div className="m-8">
-        {data?.length > 0 && (
-          <Datatable
-            cols={cols}
-            data={[...data]}
-            pagination
-            title={"Customer list"}
-            keysToExcludeFromView={["_id", "createdAt", "updatedAt","__v","id"]}
-            actionButtons={{
-              onDeleteBtnCLick: (ele) => {
-                const { _id } = ele;
-                dispatch(delDetails(_id));
-              },
-            }}
-      
-          />
-        )}
+        <Datatable
+          cols={cols}
+          data={filteredData}
+          pagination
+          title={"Customer list"}
+          keysToExcludeFromView={["_id", "createdAt", "updatedAt", "__v", "id"]}
+          actionButtons={{
+            onDeleteBtnCLick: (ele) => {
+              const { _id } = ele;
+              swal({
+                title: "Are you sure?",
+                text: "Are you sure that you want delete this product?",
+                icon: "warning",
+                dangerMode: true,
+              }).then((willDelete) => {
+                if (willDelete) {
+                  dispatch(delDetails(_id))
+                    .then(unwrapResult)
+                    .then(
+                      swal(
+                        "Deleted!",
+                        "Your product has been deleted!",
+                        "success"
+                      ),
+                      dispatch(fetchDetails())
+                    );
+                }
+              });
+            },
+          }}
+        />
       </div>
     </>
   );

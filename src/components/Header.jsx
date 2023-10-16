@@ -340,7 +340,7 @@ function Header() {
           justifyContent={"space-between"}
           flexDirection={"row"}
         >
-          <Link to={'/'}>
+          <Link to={"/"}>
             <Typography
               variant="h6"
               noWrap
@@ -486,7 +486,7 @@ function Header() {
               </h6>
             </Link>
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
+              {/* <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <PersonIcon style={{ color: "orangered" }} />
                 </IconButton>
@@ -512,7 +512,18 @@ function Header() {
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
-              </Menu>
+              </Menu> */}
+              <Link to={"/login"}>
+                <h6
+                  style={{
+                    borderRadius: "5px",
+                    padding: "8px",
+                    background: "orangered",
+                  }}
+                >
+                  Sign In
+                </h6>
+              </Link>
             </Box>
           </Stack>
         </Stack>
