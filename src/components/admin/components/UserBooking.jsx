@@ -12,6 +12,7 @@ const UserBooking = () => {
   const dispatch = useDispatch();
   // const [deep,setDeep]=useState([])
   const data = useSelector((st) => st.booking.user);
+  console.log(data);
   const filters = useSelector((st) => st.filter.filter);
 
   const filteredData = filters

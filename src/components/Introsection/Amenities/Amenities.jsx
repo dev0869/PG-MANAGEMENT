@@ -1,6 +1,6 @@
 import { Amenitiesdata } from "../../../constants/complementdata";
 import { Stack } from "@mui/material";
-
+import '../../component.css'
 const Amenities = () => {
   return (
     <div
@@ -9,7 +9,7 @@ const Amenities = () => {
     >
       <h2 className="text-3xl">Amenities List</h2>
       <br />
-      <p style={{ width: "60%", margin: "auto" }}>
+      <p className="w-[90%] md:w-[60%] text-justify md:text-center text-md" style={{  margin: "auto" }}>
         We provide all the amenities, some amenities are surely available for
         all our service places. Some of the items only you may get by request,
         Because that type of amenities are not mandatory.

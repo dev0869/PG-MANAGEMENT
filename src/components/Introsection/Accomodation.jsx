@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const Accomodation = () => {
   return (
-    <div className="bloh relative z-90">
+    <div id="services" className="bloh relative z-90">
       <br />
-      <svg
+      <svg className="svv"
         style={{
           position: "absolute",
           left: "-20%",
@@ -26,7 +26,7 @@ const Accomodation = () => {
         ></path>
       </svg>
 
-      <svg
+      <svg className="svv"
         style={{
           position: "absolute",
           right: "-20%",
@@ -46,12 +46,12 @@ const Accomodation = () => {
       </svg>
 
       <h2
-        className="text-3xl advancetext mb-8"
+        className="text-4xl md:text-3xl m-3 md:m-0  advancetext mb-8"
         style={{ textAlign: "center", fontWeight: "bold" }}
       >
         Accomodation
       </h2>
-      <p className="w-[50%] text-lg  flex justify-center mx-auto text-center ">
+      <p className="w-[100%] z-[999] md:w-[50%] relative text-lg font-semibold text-gray-800  flex justify-center mx-auto text-justify md:text-center">
         Experience comfort and style in our accommodations, designed for your
         ultimate relaxation. From cozy rooms to spacious suites, find your
         perfect retreat with modern amenities and stunning views.
@@ -71,7 +71,7 @@ const Accomodation = () => {
             const { text, img } = e;
 
             return (
-              <Link to={'/example'} className="text-black ">
+              <Link to={'/booking'} className="text-black ">
                 <Stack key={i} className="carding">
                   <img src={img} alt="harami" />
                   <Stack

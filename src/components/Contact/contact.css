@@ -241,12 +241,6 @@
   margin-left: 0px;
 }
 
-.contact_us_6 .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-12.wk-ipadp-12 {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 20px;
-  margin-left: 0px;
-}
 
 .contact_us_6 .text-blk.contactus-subhead.color {
   color: white;
@@ -539,4 +533,21 @@
   .contact_us_6 .input {
     height: 45px;
   }
+  .contact_us_6 .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-12.wk-ipadp-12 {
+  margin-top: 0px;
+  margin-right: 0px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-left: 0px;
+}
+
+}
+
+
+.contact_us_6 .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-12.wk-ipadp-12 {
+  margin-top: 0px;
+  margin-right: 0px;
+
+  margin-bottom: 20px;
+  margin-left: 0px;
 }

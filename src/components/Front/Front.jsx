@@ -11,7 +11,7 @@ const Front = () => {
     const location = useLocation();
 
 
-    const isExamplePage = location.pathname === "/example";
+  const isExamplePage = location.pathname === "/booking";
   const images = [
     img13,
     img14,

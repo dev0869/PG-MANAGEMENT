@@ -28,7 +28,7 @@ const Complimentary = () => {
           fill="#FFF8F0"
         />
       </svg>
-      <svg
+      <svg className="svv"
         style={{
           position: "absolute",
           right: "-8%",
@@ -48,13 +48,13 @@ const Complimentary = () => {
         />
       </svg>
       <h1
-        className="anim-center-title text-3xl advancetext"
+        className="text-4xl md:text-3xl m-3 md:m-0  advancetext mb-8"
         style={{ textAlign: "center", fontWeight: "bold" }}
       >
         Complimentary Benefits
       </h1>
       <br />
-      <p className="w-[50%] text-lg  flex justify-center mx-auto text-center ">
+      <p className="w-[100%] z-[999] md:w-[50%] text-lg font-semibold text-gray-800  flex justify-center mx-auto text-justify md:text-center">
         The listed services are offered to all our customers. We assure you the
         best deals in all our properties and the chance to live a more luxurious
         life with lesser cost.
@@ -74,7 +74,7 @@ const Complimentary = () => {
           const { text, img } = e;
           return (
             <div
-              className="complementarybox flex items-center flex-col bg-white justify-center gap-4"
+              className="complementarybox  flex  items-center flex-col bg-white justify-center gap-4"
               key={i}
             >
               <img src={img} alt="" />

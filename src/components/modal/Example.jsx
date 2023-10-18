@@ -56,17 +56,17 @@ function Example() {
     formik.setFieldValue("medical", event.target.value);
   };
   return (
-    <div
+    <div className="modalform"
       style={{
-        padding: "0px 12px ",
+     
         background: "#F5F5F5",
-        margin: "42px 192px",
+      
         borderRadius: "14px",
       }}
     >
       <form
         onSubmit={formik.handleSubmit}
-        className="min-h-screen p-6 bg-gray-100 flex items-center justify-center"
+        className="min-h-screen p-1 md:p-6 bg-gray-100 flex items-center justify-center"
       >
         <div className="container max-w-screen-lg mx-auto">
           <div>

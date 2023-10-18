@@ -1,120 +1,89 @@
-import React from "react";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './component.css'
 const Footer = () => {
   return (
-    <div>
-      {/* <footer className="site-footer">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 col-md-6">
-              <h6>About</h6>
-              <p className="text-justify">
-                Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative
-                to help the upcoming programmers with the code. Scanfcode
-                focuses on providing the most efficient code or snippets as the
-                code wants to be simple. We will help programmers build up
-                concepts in different programming languages that include C, C++,
-                Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and
-                Algorithm.
-              </p>
-            </div>
-
-            <div className="col-xs-6 col-md-3">
-              <h6>Categories</h6>
-              <ul className="footer-links">
-                <li>
-                  <a href="http://scanfcode.com/category/c-language/">C</a>
-                </li>
-                <li>
-                  <a href="http://scanfcode.com/category/front-end-development/">
-                    UI Design
-                  </a>
-                </li>
-                <li>
-                  <a href="http://scanfcode.com/category/back-end-development/">
-                    PHP
-                  </a>
-                </li>
-                <li>
-                  <a href="http://scanfcode.com/category/java-programming-language/">
-                    Java
-                  </a>
-                </li>
-                <li>
-                  <a href="http://scanfcode.com/category/android/">Android</a>
-                </li>
-                <li>
-                  <a href="http://scanfcode.com/category/templates/">
-                    Templates
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="col-xs-6 col-md-3">
-              <h6>Quick Links</h6>
-              <ul className="footer-links">
-                <li>
-                  <a href="http://scanfcode.com/about/">About Us</a>
-                </li>
-                <li>
-                  <a href="http://scanfcode.com/contact/">Contact Us</a>
-                </li>
-                <li>
-                  <a href="http://scanfcode.com/contribute-at-scanfcode/">
-                    Contribute
-                  </a>
-                </li>
-                <li>
-                  <a href="http://scanfcode.com/privacy-policy/">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="http://scanfcode.com/sitemap/">Sitemap</a>
-                </li>
-              </ul>
-            </div>
+      <footer className="w-full text-gray-700 bg-gray-100 body-font">
+        <div className="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
+          <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
+          <p 
+          
+             className="flex text-2xl items-center  justify-center font-bold text-red-500 title-font md:justify-start">
+            Noida PG
+            </p>
+          
+          
           </div>
-          <hr />
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 col-sm-6 col-xs-12">
-              <p className="copyright-text">
-                Copyright &copy; 2017 All Rights Reserved by
-                <a href="#">Scanfcode</a>.
-              </p>
+          <div className="md:flex  md:justify-end md:gap-[140px] flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
+            <div className=" px-4 ">
+              <h2 className="mb-3 font-bold text-sm  tracking-widest text-red-600 uppercase title-font">Company</h2>
+              <nav className="mb-10 list-none">
+                <li className="mt-3">
+                <a href={"/#home"} className="foot cursor-pointer hover:text-gray-900">Home</a>
+                </li>
+                <li className="mt-3">
+                <a href={"/#services"} className="foot cursor-pointer hover:text-gray-900">Services</a>
+                </li>
+                <li className="mt-3">
+                  <a className="foot cursor-pointer hover:text-gray-900">About Us</a>
+              </li>
+              <li className="mt-3">
+                <a href='/#contact' className="foot cursor-pointer hover:text-gray-900">Contact Us</a>
+              </li>
+              </nav>
             </div>
-
-            <div className="col-md-4 col-sm-6 col-xs-12">
-              <ul className="social-icons">
-                <li>
-                  <a className="facebook" href="#">
-                    <i className="fa fa-facebook"></i>
-                  </a>
+            <div className=" px-4 ">
+              <h2 className="mb-3 font-bold text-sm  tracking-widest text-red-600 uppercase title-font">Legal</h2>
+              <nav className="mb-10 list-none">
+                <li className="mt-3">
+                  <a className= " foot text-gray-500 cursor-pointer hover:text-gray-900">TERMS & Conditions</a>
                 </li>
-                <li>
-                  <a className="twitter" href="#">
-                    <i className="fa fa-twitter"></i>
-                  </a>
+                <li className="mt-3">
+                  <a className="foot text-gray-500 cursor-pointer hover:text-gray-900">Privacy Policy</a>
                 </li>
-                <li>
-                  <a className="dribbble" href="#">
-                    <i className="fa fa-dribbble"></i>
-                  </a>
-                </li>
-                <li>
-                  <a className="linkedin" href="#">
-                    <i className="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
+            
+              </nav>
             </div>
+            {/* <div className="w-full px-4 lg:w-1/4 md:w-1/2">
+            <h2 className="mb-3 font-bold text-sm  tracking-widest text-gray-900 uppercase title-font">Company</h2>
+            <nav className="mb-10 list-none">
+              <li className="mt-3">
+                <a href={"/#home"} className="foot cursor-pointer hover:text-gray-900">Home</a>
+              </li>
+              <li className="mt-3">
+                <a href={"/#services"} className="foot cursor-pointer hover:text-gray-900">Services</a>
+              </li>
+              <li className="mt-3">
+                <a className="foot cursor-pointer hover:text-gray-900">About Us</a>
+              </li>
+              <li className="mt-3">
+                <a href='/#contact' className="foot cursor-pointer hover:text-gray-900">Contact Us</a>
+              </li>
+            </nav>
+            </div>
+            <div className="w-full px-4 lg:w-1/4 md:w-1/2">
+              <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font">Contact</h2>
+              <nav className="mb-10 list-none">
+                <li className="mt-3">
+                  <a className="text-gray-500 cursor-pointer hover:text-gray-900">Send a Message</a>
+                </li>
+                <li className="mt-3">
+                  <a className="text-gray-500 cursor-pointer hover:text-gray-900">Request a Quote</a>
+                </li>
+                <li className="mt-3">
+                  <a className="text-gray-500 cursor-pointer hover:text-gray-900">+123-456-7890</a>
+                </li>
+              </nav>
+            </div> */}
           </div>
         </div>
-      </footer> */}
-    </div>
+        <div className="bg-gray-300">
+          <div className="container px-5 py-4 mx-auto">
+            <p className="text-sm text-gray-700 capitalize xl:text-center">© 2023 All rights reserved</p>
+          </div>
+        </div>
+      </footer>
+   
   );
 };
 

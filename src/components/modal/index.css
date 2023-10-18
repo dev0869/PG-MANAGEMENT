@@ -1,0 +1,11 @@
+.modalform{
+      margin: "42px 192px";
+         padding: "0px 12px ";
+}
+
+@media (max-width: 500px) {
+  .modalform{
+      margin: 10px;
+      padding:'0';
+}
+}

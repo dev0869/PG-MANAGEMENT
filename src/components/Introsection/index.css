@@ -9,3 +9,13 @@
 .bloh {
   padding: 90px 10px;
 }
+
+@media only screen and (max-width: 500px) {
+ .bloh {
+  padding: 10px;
+}
+.svv{
+  display: none;
+}
+
+}

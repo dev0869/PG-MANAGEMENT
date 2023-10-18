@@ -21,9 +21,11 @@ function App() {
   
   return (
     <Layout>
+
       <Routes>
+       
         <Route path="/" element={<Front />} />
-        <Route path="/example" element={<Example />} />
+        <Route path="/booking" element={<Example />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password/:id" element={<ResetPassword />} />
         <Route path="/login" element={<Login />} />
