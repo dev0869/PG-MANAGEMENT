@@ -15,8 +15,26 @@ import { Stack } from "@mui/material";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import { ListItemIcon } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-
-const pages = ["Home", "About", "Blog"];
+import LftDrawer from "./LftDrawer";
+// const pages = ["Home", "Services","About", "Blog"];
+const pages = [
+{
+  name: 'Home',
+    link: '/#home',
+  },
+{
+  name: 'Services',
+    link: '/#services',
+  },
+{
+  name: 'About',
+    link: '/#home',
+  },
+{
+  name: 'Contact Us',
+  link: '/#contact',
+  },
+]; 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Header() {
@@ -44,9 +62,7 @@ function Header() {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  
 
   return (
     <AppBar position="sticky" sx={appBarStyle}>
@@ -105,7 +121,7 @@ function Header() {
               </ListItemIcon>
             </a>
           </Stack>
-
+          {/* <LftDrawer/> */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -135,7 +151,7 @@ function Header() {
                 display: { xs: "block", md: "flex" },
               }}
             >
-              {pages.map((page) => (
+              {/* {pages.map((page) => (
                 <MenuItem
                   key={page}
                   sx={appBarStyle1}
@@ -143,7 +159,13 @@ function Header() {
                 >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
+
+              {pages.map((page) =>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <a href={page.link}> {page.name}</a>
+                </MenuItem>
+              )}
             </Menu>
           </Box>
           <Typography
@@ -184,11 +206,16 @@ function Header() {
                   display: { xs: "block", md: "flex" },
                 }}
               >
-                {pages.map((page) => (
+                {/* {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
-                ))}
+                ))} */}
+                {pages.map((page) =>
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <a href={page.link} className="text-black"> {page.name}</a>
+                  </MenuItem>
+                )}
               </Menu>
             </Box>
             <Link to={"/booking"}>
